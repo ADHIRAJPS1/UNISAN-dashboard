@@ -1,0 +1,28 @@
+import { setAlert } from "../../../../../PLUTOS/cbms_fe/src/redux/actions/alert.actions";
+import {
+    ADMIN
+} from "./actionTypes";
+
+export const admin = () => async (dispatch) => {
+    try {
+
+        const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+        console.log(" data is ", res );
+
+        
+        dispatch({
+            type: ADMIN,
+            payload: res.data.data
+        })
+
+        
+    }
+    catch (err) {
+        console.log("error");
+        dispatch(
+            setAlert("Unable to fetch post data")
+        )
+    }
+};
+
+// why thi file is not getting exported ?

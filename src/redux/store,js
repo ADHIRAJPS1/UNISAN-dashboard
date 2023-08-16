@@ -1,0 +1,9 @@
+// import { createStore } from 'redux';
+import { adminReducer } from './reducer/adminreducer'; 
+
+const store = createStore(
+  adminReducer
+);
+
+export default store;
+x
